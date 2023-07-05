@@ -2,8 +2,8 @@ class CartsController < ApplicationController
 
   def show
     if cart.empty?
-      flash[:notice] = "Your cart is empty. Browse our store to find items you would like to buy."
-      redirect_to root_path
+      @empty_cart_message = "Your cart is empty"
+    
     else
       @cart = cart
     end
