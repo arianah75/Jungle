@@ -15,10 +15,21 @@ ActiveRecord::Schema.define(version: 2021_06_26_062916) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "answers", id: :serial, force: :cascade do |t|
+    t.integer "quiz_attempt_id"
+    t.integer "choice_id"
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "choices", id: :serial, force: :cascade do |t|
+    t.integer "question_id"
+    t.text "choice_text", null: false
+    t.boolean "is_correct", null: false
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -53,7 +64,39 @@ ActiveRecord::Schema.define(version: 2021_06_26_062916) do
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
+  create_table "questions", id: :serial, force: :cascade do |t|
+    t.integer "quiz_id"
+    t.text "question_text", null: false
+  end
+
+  create_table "quizattempts", id: :serial, force: :cascade do |t|
+    t.integer "quiz_id"
+    t.integer "user_id"
+    t.integer "score"
+  end
+
+  create_table "quizzes", id: :serial, force: :cascade do |t|
+    t.text "title", null: false
+    t.text "description"
+    t.boolean "is_public", null: false
+    t.integer "creator_id"
+  end
+
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.text "name", null: false
+    t.text "email", null: false
+    t.text "password", null: false
+    t.index ["email"], name: "users_email_key", unique: true
+  end
+
+  add_foreign_key "answers", "choices", name: "answers_choice_id_fkey"
+  add_foreign_key "answers", "quizattempts", column: "quiz_attempt_id", name: "answers_quiz_attempt_id_fkey"
+  add_foreign_key "choices", "questions", name: "choices_question_id_fkey"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "products", "categories"
+  add_foreign_key "questions", "quizzes", name: "questions_quiz_id_fkey"
+  add_foreign_key "quizattempts", "quizzes", name: "quizattempts_quiz_id_fkey"
+  add_foreign_key "quizattempts", "users", name: "quizattempts_user_id_fkey"
+  add_foreign_key "quizzes", "users", column: "creator_id", name: "quizzes_creator_id_fkey"
 end
