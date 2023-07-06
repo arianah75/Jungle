@@ -32,9 +32,11 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-Home page
+### Home Page
 !["Screenshot of home page"](https://github.com/arianah75/Jungle/blob/master/doc/home_page.png?raw=true)
-Product page
+
+### Product Page
 !["Screenshot of product page"](https://github.com/arianah75/Jungle/blob/master/doc/product.png?raw=true)
-Sign up page
+
+### Sign Up Page
 !["Screenshot of sign up page"](https://github.com/arianah75/Jungle/blob/master/doc/sign_up.png?raw=true)
