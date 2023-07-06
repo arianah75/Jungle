@@ -46,12 +46,12 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ### Cart Page
 
-!["Screenshot of cart page"]()
+!["Screenshot of cart page"](https://github.com/arianah75/Jungle/blob/master/doc/cart_page.png?raw=true)
 
 ### Pay Out Page
 
-!["Screenshot of pay out page"]()
+!["Screenshot of pay out page"](https://github.com/arianah75/Jungle/blob/master/doc/payout.png?raw=true)
 
 ### Admin Page
 
-!["Screenshot of admin page"]()
+!["Screenshot of admin page"](https://github.com/arianah75/Jungle/blob/master/doc/admin_page.png?raw=true)
