@@ -32,6 +32,6 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-!["Screenshot of home page"]()
-!["Screenshot of home page"]()
-!["Screenshot of home page"]()
+!["Screenshot of home page"](https://github.com/arianah75/Jungle/blob/master/doc/home_page.png?raw=true)
+!["Screenshot of product page"](https://github.com/arianah75/Jungle/blob/master/doc/product.png?raw=true)
+!["Screenshot of sign up page"](https://github.com/arianah75/Jungle/blob/master/doc/sign_up.png?raw=true)
